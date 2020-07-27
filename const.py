@@ -57,5 +57,18 @@ class BtCommandByte(object):
     PRT_GET_DEV_NAME  = 48
     PRT_SENT_DEV_NAME  = 49
 
+    PRT_CMD_40 = 64
+    PRT_CMD_41 = 65
+
+    PRT_CMD_42 = 66
+    PRT_CMD_43 = 67
+
+    PRT_CMD_7F = 127
+    PRT_CMD_80 =  128
+
+    PRT_CMD_81 = 129
+    PRT_CMD_82 = 130
+
+
     PRT_MAX_CMD = 255
 
