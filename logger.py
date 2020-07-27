@@ -20,7 +20,7 @@ class Logger(object):
         sh = logging.StreamHandler()  
         sh.setFormatter(format_str)  
         th = logging.FileHandler(
-            filename=filename, encoding='utf-8')  
+            filename=filename, mode='w', encoding='utf-8')
         th.setFormatter(format_str)  
         self.logger.addHandler(sh)  
         self.logger.addHandler(th)
