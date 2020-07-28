@@ -1,6 +1,5 @@
 from logger import Logger
 from const import Const
-from prt_cmd import BtCommandByte
 
 
 # state machine for serial data parser
@@ -26,40 +25,47 @@ PKT_LEN_BYTE_INDEX = 3
 PKT_BYTES_AFTER_LEN = 5
 
 class SerialDataPacket:
-    pkt_buf = bytearray()
 
-    def __init__(self, logging):
+    def __init__(self, logging, tag="SerialDataPacket"):
         self.logging = logging
+        self.tag = tag
+        self.state = None
+        self.pkt_buf = bytearray()
         self.enter_state_init()
 
-    def state_changed(self):
-        self.logging.debug("enter state '{}'".format(FSM.get_state_name(self.state)))
+
+    def state_change_to(self, state):
+        self.state = state
+        self.logging.debug(
+            "[{}]: enter state '{}'".format(self.tag, FSM.get_state_name(self.state)))
 
     def enter_state_init(self):
-        self.state = FSM.INIT
+        self.state_change_to(FSM.INIT)
         self.pkt_len = 0
         self.crc32 = 0
-        self.state_changed()
     
     def enter_state_pkt_started(self):
-        self.state = FSM.PKT_STARTED
+        self.state_change_to(FSM.PKT_STARTED)
         # start a new packet
         del self.pkt_buf[:]
-        self.state_changed()
 
     def enter_state_got_len(self):
-        self.state = FSM.GOT_LEN
+        self.state_change_to(FSM.GOT_LEN)
         self.pkt_len = int.from_bytes(self.pkt_buf[PKT_LEN_BYTE_INDEX:PKT_LEN_BYTE_INDEX+2], 'little')
-        self.state_changed()
+        self.logging.debug(
+            "[{}]: packet length = {}".format(self.tag, self.pkt_len))
 
     def enter_state_got_crc(self):
-        self.state = FSM.GOT_CRC
+        self.state_change_to(FSM.GOT_CRC)
         crc32_start = PKT_BYTES_AFTER_LEN + self.pkt_len
         self.crc32 = int.from_bytes(
             self.pkt_buf[crc32_start:crc32_start+PKT_CRC_LEN], 'little')
-        self.state_changed()
+        self.logging.debug(
+            "[{}]: packet CRC32 = ({})".format(self.tag, hex(self.crc32)))
 
-    def parse_data(self, data):
+    def parse_data(self, data, callback=None):
+        self.logging.debug(
+            "[{}]: parsing data ({})".format(self.tag, data.hex()))
         for d in data:
             byte = d.to_bytes(1, 'little')
             if byte == Const.PKT_START_BYTE:
@@ -71,10 +77,12 @@ class SerialDataPacket:
                 self.pkt_buf.extend(byte)
                 if self.state == FSM.GOT_CRC:
                     self.enter_state_init()  # one packet received
-                    return self.pkt_buf
+                    if callback:
+                        callback(self.pkt_buf)
             else:
                 if self.state == FSM.INIT: # ignore packet outside bytes
-                    self.logging.debug("ignore outband data (0x{})".format(byte.hex()))
+                    self.logging.debug(
+                        "[{}]: ignore outband data (0x{})".format(self.tag, byte.hex()))
                     continue
 
                 self.pkt_buf.extend(byte)
@@ -84,5 +92,23 @@ class SerialDataPacket:
                     self.enter_state_got_len()
                 elif self.state == FSM.GOT_LEN and buf_len == PKT_BYTES_AFTER_LEN + self.pkt_len + PKT_CRC_LEN:
                     self.enter_state_got_crc()
-                    
-        return None
+
+
+if __name__ == "__main__":
+    count = 0
+    log = Logger('serial_packet.log', level='debug')
+    # Hex format data, 9 packets
+    data = ['02', '0a00010001965bd24503023000010001965bd24503021f00010001965b',
+            'd24503021000010001965bd24503022d00010001965bd24503024200010001965bd24503027f00010001965bd24503028100010001965bd24503020400010001965bd2',
+            '4503']
+
+    def get_packet(packet):
+        global count
+        log.logger.info(
+            '#{} Test_Packet: {}'.format(count, packet.hex()))
+        count += 1
+
+    data_packet = SerialDataPacket(log.logger, 'TEST')
+    for d in data:
+        ds = bytes.fromhex(d)
+        data_packet.parse_data(ds, get_packet)

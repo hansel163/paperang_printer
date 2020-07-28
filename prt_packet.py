@@ -5,18 +5,17 @@ from prt_cmd import BtCommandByte
 
 
 class PRTPacket:
-    prefix = Const.PKT_START  # 1 byte
-    cmd = 0             # 1 byte: command
-    index = 0           # 1 byte: packet index for same command
-    len = 0             # 2 bytes: payload length
-    payload = bytes()   # n bytes: payload
-    crc32 = 0           # 4 bytes: CRC32 of payload
-    suffix = Const.PKT_STOP   # 1 byte
-
-    crckey = Const.PKT_CRC_KEY
-
     def __init__(self, crckeyset=Const.PKT_CRC_KEY):
         self.crckey = crckeyset
+        self.prefix = Const.PKT_START  # 1 byte
+        self.cmd = 0             # 1 byte: command
+        self.index = 0           # 1 byte: packet index for same command
+        self.len = 0             # 2 bytes: payload length
+        self.payload = bytes()   # n bytes: payload
+        self.crc32 = 0           # 4 bytes: CRC32 of payload
+        self.suffix = Const.PKT_STOP   # 1 byte
+
+        self.crckey = Const.PKT_CRC_KEY
 
     def calc_crc32(self, content):
         return zlib.crc32(content, self.crckey)

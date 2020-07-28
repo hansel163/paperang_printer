@@ -38,36 +38,36 @@ class SerialHandler(serial.threaded.Protocol):
         super(SerialHandler, self).__init__()
         self.prt = prt
         self.logging = logging
+        self.count = 0
         self.data_packet = SerialDataPacket(logging)
 
     def __call__(self):
         return self
 
     def data_received(self, data):
-        self.logging.debug('Host2Device Data: {}'.format(data.hex()))
+        self.logging.debug('Host2Device_Data: {}'.format(data.hex()))
         super(SerialHandler, self).data_received(data)
-        packet = self.data_packet.parse_data(data)
-        if packet != None:
-            self.get_packet(packet)
+        self.data_packet.parse_data(data, self.get_packet)
 
     def get_packet(self, packet):
         self.logging.info(
-            'Host2Device Packet: {}'.format(packet.hex()))
+            '#{} Host2Device_Packet: {}'.format(self.count, packet.hex()))
+        self.count += 1
         self.prt.handle_recv_pkt(packet)
 
 class DummyPrinter:
-    serial_worker = None
-    serial_handler = None
-    intentional_exit = False
-    crckey = Const.PKT_CRC_KEY
-
-    power_down_time = PRT_PWD_DOWN_TIME
-
     def __init__(self, log, port=COM_PORT, baud=BAUD):
         self.port = COM_PORT
         self.serial = serial.serial_for_url(COM_PORT, baudrate=baud, timeout=1,
                                           do_not_open= True)
         self.logging = log.logger
+        self.serial_worker = None
+        self.serial_handler = None
+        self.intentional_exit = False
+        self.count = 0
+        self.crckey = Const.PKT_CRC_KEY
+
+        self.power_down_time = PRT_PWD_DOWN_TIME
 
     def connect_host(self):
         try:
@@ -99,7 +99,8 @@ class DummyPrinter:
 
     def send_data(self, data):
         self.serial.write(data)
-        self.logging.info("Device2Host Packet: {}".format(data.hex()))
+        self.logging.info("#{} Device2Host_Packet: {}".format(self.count, data.hex()))
+        self.count += 1
 
     def send_ack(self, cmd, ack=0):
         packet = PRTPacket(self.crckey)
