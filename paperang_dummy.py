@@ -39,7 +39,7 @@ class SerialHandler(serial.threaded.Protocol):
         self.prt = prt
         self.logging = logging
         self.count = 0
-        self.data_packet = SerialDataPacket(logging)
+        self.data_packet = SerialDataPacket(logging, 'DUMMY')
 
     def __call__(self):
         return self
