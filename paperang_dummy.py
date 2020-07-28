@@ -61,6 +61,8 @@ class DummyPrinter:
     intentional_exit = False
     crckey = Const.PKT_CRC_KEY
 
+    power_down_time = PRT_PWD_DOWN_TIME
+
     def __init__(self, log, port=COM_PORT, baud=BAUD):
         self.port = COM_PORT
         self.serial = serial.serial_for_url(COM_PORT, baudrate=baud, timeout=1,
@@ -141,7 +143,7 @@ class DummyPrinter:
 
     def handle_get_pwd_down_time(self, packet):
         self.send_msg(BtCommandByte.PRT_SENT_POWER_DOWN_TIME,
-                      struct.pack('<H', PRT_PWD_DOWN_TIME))
+                      struct.pack('<H', self.power_down_time))
         self.send_ack(BtCommandByte.PRT_GET_POWER_DOWN_TIME)
 
     def handle_get_bat_status(self, packet):
@@ -177,6 +179,10 @@ class DummyPrinter:
                       bytes.fromhex(PRT_CMD_40))
         self.send_ack(BtCommandByte.PRT_CMD_40)
 
+    def handle_set_pwd_down_time(self, packet: PRTPacket):
+        self.power_down_time = int.from_bytes(packet.payload, 'little')
+        self.send_ack(BtCommandByte.PRT_SET_POWER_DOWN_TIME)
+
     def handle_recv_cmd(self, packet: PRTPacket):
         cmd_handlers = {
             BtCommandByte.PRT_SET_CRC_KEY: self.handle_set_crc32_key,
@@ -189,8 +195,12 @@ class DummyPrinter:
             BtCommandByte.PRT_CMD_7F: self.handle_cmd_7F,
             BtCommandByte.PRT_CMD_81: self.handle_cmd_81,
             BtCommandByte.PRT_GET_VERSION: self.handle_get_version,
-            BtCommandByte.PRT_CMD_40: self.handle_cmd_40
+            BtCommandByte.PRT_CMD_40: self.handle_cmd_40,
+            BtCommandByte.PRT_SET_POWER_DOWN_TIME: self.handle_set_pwd_down_time
         }
+        self.logging.info(
+            "Received command '{} ({})'. ".format(
+                BtCommandByte.findCommand(packet.cmd), hex(packet.cmd)))
         handler = cmd_handlers.get(packet.cmd, self.handle_other_cmds)
         if handler:
             handler(packet)
