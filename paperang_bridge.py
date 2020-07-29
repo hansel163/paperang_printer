@@ -11,7 +11,7 @@ from serial_packet import SerialDataPacket
 # python -m serial.tools.miniterm <port_name>
 
 COM_PORT= 'COM10'
-BAUD = 9600
+BAUD = 115200
 PAPERANG_ADDR = "fc:58:fa:1e:26:63"
 UUID = "00001101-0000-1000-8000-00805F9B34FB"
 MAX_RECV_LEN = 1024

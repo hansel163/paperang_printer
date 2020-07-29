@@ -15,13 +15,12 @@ from prt_packet import PRTPacket
 # python -m serial.tools.miniterm <port_name>
 
 COM_PORT= 'COM10'
-BAUD = 9600
+BAUD = 115200
 MAX_RECV_LEN = 1024
 
 
 PRT_SN = b'P2B02004087288'
 PRT_NAME = b'P2'
-PRT_PWD_DOWN_TIME = 3600   # seconds
 PRT_BAT_STATUS = 90
 PRT_COUNTRY_NAME = b'CN'
 PRT_CMD_42 = b'BK3432'
@@ -29,6 +28,8 @@ PRT_CMD_7F = '76332e33382e313900000000'  # Hex format
 PRT_CMD_81 = '484d453233305f503200000000000000' # Hex format
 PRT_VERSION = '080101'  # Hex format, 1.1.8
 PRT_CMD_40 = b'\x00'
+PRT_PWD_DOWN_TIME = 3600    # seconds
+PRT_HEAT_DENSITY = 75       # %
 
 
 class SerialHandler(serial.threaded.Protocol):
@@ -67,7 +68,9 @@ class DummyPrinter:
         self.count = 0
         self.crckey = Const.PKT_CRC_KEY
 
+        # printer paramters
         self.power_down_time = PRT_PWD_DOWN_TIME
+        self.heat_density = PRT_HEAT_DENSITY
 
     def connect_host(self):
         try:
@@ -132,57 +135,56 @@ class DummyPrinter:
 
     def handle_set_crc32_key(self, packet):
         self.set_crc32_key(int.from_bytes(packet.payload, 'little'))
-        self.send_ack(BtCommandByte.PRT_SET_CRC_KEY)
 
     def handle_get_sn(self, packet):
         self.send_msg(BtCommandByte.PRT_SENT_SN, PRT_SN)
-        self.send_ack(BtCommandByte.PRT_GET_SN)
 
     def handle_get_dev_name(self, packet):
         self.send_msg(BtCommandByte.PRT_SENT_DEV_NAME, PRT_NAME)
-        self.send_ack(BtCommandByte.PRT_GET_DEV_NAME)
 
     def handle_get_pwd_down_time(self, packet):
         self.send_msg(BtCommandByte.PRT_SENT_POWER_DOWN_TIME,
                       struct.pack('<H', self.power_down_time))
-        self.send_ack(BtCommandByte.PRT_GET_POWER_DOWN_TIME)
 
     def handle_get_bat_status(self, packet):
         self.send_msg(BtCommandByte.PRT_SENT_BAT_STATUS, struct.pack('<B', PRT_BAT_STATUS))
-        self.send_ack(BtCommandByte.PRT_GET_BAT_STATUS)
 
     def handle_get_country_name(self, packet):
         self.send_msg(BtCommandByte.PRT_SENT_COUNTRY_NAME,
                       PRT_COUNTRY_NAME)
-        self.send_ack(BtCommandByte.PRT_GET_COUNTRY_NAME)
 
     def handle_cmd_42(self, packet):
         self.send_msg(BtCommandByte.PRT_CMD_43,
                       PRT_CMD_42)
-        self.send_ack(BtCommandByte.PRT_CMD_42)
 
     def handle_cmd_7F(self, packet):
         self.send_msg(BtCommandByte.PRT_CMD_80,
                       bytes.fromhex(PRT_CMD_7F))
-        self.send_ack(BtCommandByte.PRT_CMD_7F)
 
     def handle_cmd_81(self, packet):
         self.send_msg(BtCommandByte.PRT_CMD_82,
                       bytes.fromhex(PRT_CMD_81))
-        self.send_ack(BtCommandByte.PRT_CMD_81)
 
     def handle_get_version(self, packet):
         self.send_msg(BtCommandByte.PRT_SENT_VERSION, bytes.fromhex(PRT_VERSION))
-        self.send_ack(BtCommandByte.PRT_GET_VERSION)
 
     def handle_cmd_40(self, packet):
         self.send_msg(BtCommandByte.PRT_CMD_41,
                       bytes.fromhex(PRT_CMD_40))
-        self.send_ack(BtCommandByte.PRT_CMD_40)
 
     def handle_set_pwd_down_time(self, packet: PRTPacket):
         self.power_down_time = int.from_bytes(packet.payload, 'little')
-        self.send_ack(BtCommandByte.PRT_SET_POWER_DOWN_TIME)
+        self.logging.info(
+            "Power down time set to {}s".format(self.power_down_time))
+
+    def handle_set_heat_density(self, packet: PRTPacket):
+        self.heat_density = int.from_bytes(packet.payload, 'little')
+        self.logging.info(
+            "Heat density set to {}%".format(self.heat_density))
+
+    def handle_get_heat_density(self, packet):
+        self.send_msg(BtCommandByte.PRT_SENT_HEAT_DENSITY,
+                      struct.pack('<B', self.heat_density))
 
     def handle_recv_cmd(self, packet: PRTPacket):
         cmd_handlers = {
@@ -197,14 +199,25 @@ class DummyPrinter:
             BtCommandByte.PRT_CMD_81: self.handle_cmd_81,
             BtCommandByte.PRT_GET_VERSION: self.handle_get_version,
             BtCommandByte.PRT_CMD_40: self.handle_cmd_40,
-            BtCommandByte.PRT_SET_POWER_DOWN_TIME: self.handle_set_pwd_down_time
+            BtCommandByte.PRT_SET_POWER_DOWN_TIME: self.handle_set_pwd_down_time,
+            BtCommandByte.PRT_SET_HEAT_DENSITY: self.handle_set_heat_density,
+            BtCommandByte.PRT_GET_HEAT_DENSITY: self.handle_get_heat_density
         }
-        self.logging.info(
-            "Received command '{} ({})'. ".format(
-                BtCommandByte.findCommand(packet.cmd), hex(packet.cmd)))
+        if packet.cmd != BtCommandByte.PRT_PRINT_DATA:
+            self.logging.info(
+                "Received command '{} ({})', len={}, payload='{} (0x{}))'. ".format(
+                    BtCommandByte.findCommand(packet.cmd), hex(packet.cmd),
+                    packet.len, packet.payload, packet.payload.hex()))
+        else:
+            self.logging.info(
+                "Received command '{} ({})', len={} ".format(
+                    BtCommandByte.findCommand(packet.cmd), hex(packet.cmd),
+                    packet.len))
+
         handler = cmd_handlers.get(packet.cmd, self.handle_other_cmds)
         if handler:
             handler(packet)
+        self.send_ack(packet.cmd)
 
     def handle_recv_pkt(self, rec_pkt):
         packet = PRTPacket(self.crckey)
