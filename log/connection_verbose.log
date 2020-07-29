@@ -1,0 +1,276 @@
+2020-07-29 00:39:26,084 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:26,089 - connect_host[line:74] - INFO: Host connected.
+2020-07-29 00:39:26,090 - scanservices[line:82] - INFO: Searching for services...
+2020-07-29 00:39:26,599 - scanservices[line:92] - INFO: Found a valid service on target device.
+2020-07-29 00:39:26,617 - connect_device[line:101] - INFO: Service found. Connecting to "b'Port\x00'" on fc:58:fa:1e:26:63...
+2020-07-29 00:39:26,845 - connect_device[line:105] - INFO: Device connected.
+2020-07-29 00:39:26,859 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:26,879 - redirect_Serial2Bt_thread[line:122] - INFO: Start to redirect host data to device ...
+2020-07-29 00:39:26,883 - redirect_Bt2Serial[line:130] - INFO: Start to redirect device data to host ...
+2020-07-29 00:39:31,419 - data_received[line:35] - DEBUG: Host2Device_Data: 02
+2020-07-29 00:39:31,435 - parse_data[line:68] - DEBUG: [HOST]: parsing data (02)
+2020-07-29 00:39:31,452 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,464 - data_received[line:35] - DEBUG: Host2Device_Data: 180004004c51a791f15d363703
+2020-07-29 00:39:31,467 - parse_data[line:68] - DEBUG: [HOST]: parsing data (180004004c51a791f15d363703)
+2020-07-29 00:39:31,470 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,478 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 4
+2020-07-29 00:39:31,479 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,480 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x37365df1)
+2020-07-29 00:39:31,481 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,483 - get_packet[line:48] - INFO: #0 Host2Device_Packet: 02180004004c51a791f15d363703
+2020-07-29 00:39:31,539 - redirect_Bt2Serial[line:141] - DEBUG: Device2Host_Data: 021800010000ac23a5e103
+2020-07-29 00:39:31,541 - parse_data[line:68] - DEBUG: [DEVICE]: parsing data (021800010000ac23a5e103)
+2020-07-29 00:39:31,544 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,546 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,549 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,552 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,565 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,568 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,578 - get_packet[line:126] - INFO: #0 Device2Host_Packet: 021800010000ac23a5e103
+2020-07-29 00:39:31,671 - data_received[line:35] - DEBUG: Host2Device_Data: 02
+2020-07-29 00:39:31,679 - parse_data[line:68] - DEBUG: [HOST]: parsing data (02)
+2020-07-29 00:39:31,684 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,687 - data_received[line:35] - DEBUG: Host2Device_Data: 0a000100013a13a296030230000100
+2020-07-29 00:39:31,699 - parse_data[line:68] - DEBUG: [HOST]: parsing data (0a000100013a13a296030230000100)
+2020-07-29 00:39:31,702 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,714 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,715 - redirect_Bt2Serial[line:141] - DEBUG: Device2Host_Data: 020b000e005032423032303034303837323930ade1d06903020a00010000ac23a5e103
+2020-07-29 00:39:31,718 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,719 - parse_data[line:68] - DEBUG: [DEVICE]: parsing data (020b000e005032423032303034303837323930ade1d06903020a00010000ac23a5e103)
+2020-07-29 00:39:31,722 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x96a2133a)
+2020-07-29 00:39:31,731 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,732 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,733 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,735 - get_packet[line:48] - INFO: #1 Host2Device_Packet: 020a000100013a13a29603
+2020-07-29 00:39:31,736 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 14
+2020-07-29 00:39:31,738 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,744 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,745 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,746 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0x69d0e1ad)
+2020-07-29 00:39:31,747 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,748 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,749 - data_received[line:35] - DEBUG: Host2Device_Data: 013a13a29603021f000100013a13a296030210000100013a13a29603022d000100013a13a296030242000100013a13a29603027f000100013a
+2020-07-29 00:39:31,749 - get_packet[line:126] - INFO: #1 Device2Host_Packet: 020b000e005032423032303034303837323930ade1d06903
+2020-07-29 00:39:31,750 - parse_data[line:68] - DEBUG: [HOST]: parsing data (013a13a29603021f000100013a13a296030210000100013a13a29603022d000100013a13a296030242000100013a13a29603027f000100013a)
+2020-07-29 00:39:31,751 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,752 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,752 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,753 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x96a2133a)
+2020-07-29 00:39:31,758 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,759 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,761 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,761 - get_packet[line:48] - INFO: #2 Host2Device_Packet: 0230000100013a13a29603
+2020-07-29 00:39:31,762 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,762 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,764 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,764 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,765 - get_packet[line:126] - INFO: #2 Device2Host_Packet: 020a00010000ac23a5e103
+2020-07-29 00:39:31,766 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,767 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,768 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x96a2133a)
+2020-07-29 00:39:31,768 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,773 - get_packet[line:48] - INFO: #3 Host2Device_Packet: 021f000100013a13a29603
+2020-07-29 00:39:31,774 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,775 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,776 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,777 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,777 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x96a2133a)
+2020-07-29 00:39:31,778 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,779 - get_packet[line:48] - INFO: #4 Host2Device_Packet: 0210000100013a13a29603
+2020-07-29 00:39:31,780 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,780 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,781 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,781 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,782 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x96a2133a)
+2020-07-29 00:39:31,783 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,783 - get_packet[line:48] - INFO: #5 Host2Device_Packet: 022d000100013a13a29603
+2020-07-29 00:39:31,784 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,785 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,785 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,786 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,790 - redirect_Bt2Serial[line:141] - DEBUG: Device2Host_Data: 02310002005032b9a9ef7f03023000010000ac23a5e10302200002000807c6ba3e5b0302
+2020-07-29 00:39:31,791 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x96a2133a)
+2020-07-29 00:39:31,791 - parse_data[line:68] - DEBUG: [DEVICE]: parsing data (02310002005032b9a9ef7f03023000010000ac23a5e10302200002000807c6ba3e5b0302)
+2020-07-29 00:39:31,792 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,793 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,794 - get_packet[line:48] - INFO: #6 Host2Device_Packet: 0242000100013a13a29603
+2020-07-29 00:39:31,794 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,795 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,796 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 2
+2020-07-29 00:39:31,796 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,797 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,797 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,798 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0x7fefa9b9)
+2020-07-29 00:39:31,798 - data_received[line:35] - DEBUG: Host2Device_Data: 13a296030281000100013a13a296030204000100013a13a29603
+2020-07-29 00:39:31,799 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,799 - parse_data[line:68] - DEBUG: [HOST]: parsing data (13a296030281000100013a13a296030204000100013a13a29603)
+2020-07-29 00:39:31,800 - get_packet[line:126] - INFO: #3 Device2Host_Packet: 02310002005032b9a9ef7f03
+2020-07-29 00:39:31,800 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,801 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,801 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x96a2133a)
+2020-07-29 00:39:31,802 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,802 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,807 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,808 - get_packet[line:48] - INFO: #7 Host2Device_Packet: 027f000100013a13a29603
+2020-07-29 00:39:31,809 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,809 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,810 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,810 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,811 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,812 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,813 - get_packet[line:126] - INFO: #4 Device2Host_Packet: 023000010000ac23a5e103
+2020-07-29 00:39:31,813 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,814 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,814 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x96a2133a)
+2020-07-29 00:39:31,815 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,815 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,816 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 2
+2020-07-29 00:39:31,816 - get_packet[line:48] - INFO: #8 Host2Device_Packet: 0281000100013a13a29603
+2020-07-29 00:39:31,817 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,817 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,817 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0x5b3ebac6)
+2020-07-29 00:39:31,818 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,819 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,820 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,820 - get_packet[line:126] - INFO: #5 Device2Host_Packet: 02200002000807c6ba3e5b03
+2020-07-29 00:39:31,824 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,825 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,826 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x96a2133a)
+2020-07-29 00:39:31,827 - redirect_Bt2Serial[line:141] - DEBUG: Device2Host_Data: 1f00010000ac23a5e10302110001004bb4bbab0003021000010000ac23a5e103022e000200434e3cd5b34703022d00010000ac23a5e1030243000600424b33343332f03457c903024200010000ac23a5e1030280000c0076332e33382e3139000000006701a94303027f00010000ac23a5e1030282001000484d453233305f503200000000000000346db54703028100010000ac23a5e10302050003000701019f665f8a03020400010000ac23a5e103
+2020-07-29 00:39:31,827 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,829 - parse_data[line:68] - DEBUG: [DEVICE]: parsing data (1f00010000ac23a5e10302110001004bb4bbab0003021000010000ac23a5e103022e000200434e3cd5b34703022d00010000ac23a5e1030243000600424b33343332f03457c903024200010000ac23a5e1030280000c0076332e33382e3139000000006701a94303027f00010000ac23a5e1030282001000484d453233305f503200000000000000346db54703028100010000ac23a5e10302050003000701019f665f8a03020400010000ac23a5e103)
+2020-07-29 00:39:31,830 - get_packet[line:48] - INFO: #9 Host2Device_Packet: 0204000100013a13a29603
+2020-07-29 00:39:31,831 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,832 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,833 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,833 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,834 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,835 - get_packet[line:126] - INFO: #6 Device2Host_Packet: 021f00010000ac23a5e103
+2020-07-29 00:39:31,835 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,840 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,841 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,842 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,843 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xabbbb4)
+2020-07-29 00:39:31,844 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,844 - get_packet[line:126] - INFO: #7 Device2Host_Packet: 02110001004bb4bbab0003
+2020-07-29 00:39:31,845 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,846 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,846 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,847 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,848 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,848 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,849 - get_packet[line:126] - INFO: #8 Device2Host_Packet: 021000010000ac23a5e103
+2020-07-29 00:39:31,850 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,850 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,851 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 2
+2020-07-29 00:39:31,851 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,852 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0x47b3d53c)
+2020-07-29 00:39:31,853 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,857 - get_packet[line:126] - INFO: #9 Device2Host_Packet: 022e000200434e3cd5b34703
+2020-07-29 00:39:31,858 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,859 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,860 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,860 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,861 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,862 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,862 - get_packet[line:126] - INFO: #10 Device2Host_Packet: 022d00010000ac23a5e103
+2020-07-29 00:39:31,863 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,863 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,864 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 6
+2020-07-29 00:39:31,865 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,865 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xc95734f0)
+2020-07-29 00:39:31,866 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,867 - get_packet[line:126] - INFO: #11 Device2Host_Packet: 0243000600424b33343332f03457c903
+2020-07-29 00:39:31,867 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,868 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,868 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,870 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,874 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,876 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,876 - get_packet[line:126] - INFO: #12 Device2Host_Packet: 024200010000ac23a5e103
+2020-07-29 00:39:31,877 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,878 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,878 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 12
+2020-07-29 00:39:31,879 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,880 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0x43a90167)
+2020-07-29 00:39:31,881 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,882 - get_packet[line:126] - INFO: #13 Device2Host_Packet: 0280000c0076332e33382e3139000000006701a94303
+2020-07-29 00:39:31,883 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,884 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,884 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,886 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,887 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,892 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,894 - get_packet[line:126] - INFO: #14 Device2Host_Packet: 027f00010000ac23a5e103
+2020-07-29 00:39:31,895 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,895 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,896 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 16
+2020-07-29 00:39:31,897 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,897 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0x47b56d34)
+2020-07-29 00:39:31,898 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,898 - get_packet[line:126] - INFO: #15 Device2Host_Packet: 0282001000484d453233305f503200000000000000346db54703
+2020-07-29 00:39:31,899 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,899 - data_received[line:35] - DEBUG: Host2Device_Data: 02
+2020-07-29 00:39:31,900 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,900 - parse_data[line:68] - DEBUG: [HOST]: parsing data (02)
+2020-07-29 00:39:31,901 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,902 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,902 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,903 - data_received[line:35] - DEBUG: Host2Device_Data: 390001
+2020-07-29 00:39:31,904 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,908 - parse_data[line:68] - DEBUG: [HOST]: parsing data (390001)
+2020-07-29 00:39:31,909 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,910 - data_received[line:35] - DEBUG: Host2Device_Data: 000ab2ca7001
+2020-07-29 00:39:31,911 - get_packet[line:126] - INFO: #16 Device2Host_Packet: 028100010000ac23a5e103
+2020-07-29 00:39:31,911 - parse_data[line:68] - DEBUG: [HOST]: parsing data (000ab2ca7001)
+2020-07-29 00:39:31,912 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,912 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,913 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,913 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:31,915 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 3
+2020-07-29 00:39:31,915 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,916 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,917 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0x170cab2)
+2020-07-29 00:39:31,917 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0x8a5f669f)
+2020-07-29 00:39:31,918 - data_received[line:35] - DEBUG: Host2Device_Data: 03
+2020-07-29 00:39:31,918 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,918 - parse_data[line:68] - DEBUG: [HOST]: parsing data (03)
+2020-07-29 00:39:31,920 - get_packet[line:126] - INFO: #17 Device2Host_Packet: 02050003000701019f665f8a03
+2020-07-29 00:39:31,920 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:31,925 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,926 - get_packet[line:48] - INFO: #10 Host2Device_Packet: 02390001000ab2ca700103
+2020-07-29 00:39:31,926 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,928 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,928 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,929 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,930 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,930 - get_packet[line:126] - INFO: #18 Device2Host_Packet: 020400010000ac23a5e103
+2020-07-29 00:39:31,965 - redirect_Bt2Serial[line:141] - DEBUG: Device2Host_Data: 023900010000ac23a5e103
+2020-07-29 00:39:31,966 - parse_data[line:68] - DEBUG: [DEVICE]: parsing data (023900010000ac23a5e103)
+2020-07-29 00:39:31,967 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:31,968 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:31,973 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:31,974 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:31,975 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:31,976 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:31,977 - get_packet[line:126] - INFO: #19 Device2Host_Packet: 023900010000ac23a5e103
+2020-07-29 00:39:32,226 - data_received[line:35] - DEBUG: Host2Device_Data: 02
+2020-07-29 00:39:32,231 - parse_data[line:68] - DEBUG: [HOST]: parsing data (02)
+2020-07-29 00:39:32,252 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'PKT_STARTED'
+2020-07-29 00:39:32,264 - data_received[line:35] - DEBUG: Host2Device_Data: 190001004bb4bbab0003
+2020-07-29 00:39:32,266 - parse_data[line:68] - DEBUG: [HOST]: parsing data (190001004bb4bbab0003)
+2020-07-29 00:39:32,269 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_LEN'
+2020-07-29 00:39:32,271 - enter_state_got_len[line:56] - DEBUG: [HOST]: packet length = 1
+2020-07-29 00:39:32,282 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'GOT_CRC'
+2020-07-29 00:39:32,284 - enter_state_got_crc[line:64] - DEBUG: [HOST]: packet CRC32 = (0xabbbb4)
+2020-07-29 00:39:32,285 - state_change_to[line:39] - DEBUG: [HOST]: enter state 'INIT'
+2020-07-29 00:39:32,287 - get_packet[line:48] - INFO: #11 Host2Device_Packet: 02190001004bb4bbab0003
+2020-07-29 00:39:32,290 - redirect_Bt2Serial[line:141] - DEBUG: Device2Host_Data: 021900010000ac23a5e103
+2020-07-29 00:39:32,294 - parse_data[line:68] - DEBUG: [DEVICE]: parsing data (021900010000ac23a5e103)
+2020-07-29 00:39:32,296 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'PKT_STARTED'
+2020-07-29 00:39:32,297 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_LEN'
+2020-07-29 00:39:32,299 - enter_state_got_len[line:56] - DEBUG: [DEVICE]: packet length = 1
+2020-07-29 00:39:32,300 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'GOT_CRC'
+2020-07-29 00:39:32,301 - enter_state_got_crc[line:64] - DEBUG: [DEVICE]: packet CRC32 = (0xe1a523ac)
+2020-07-29 00:39:32,303 - state_change_to[line:39] - DEBUG: [DEVICE]: enter state 'INIT'
+2020-07-29 00:39:32,309 - get_packet[line:126] - INFO: #20 Device2Host_Packet: 021900010000ac23a5e103

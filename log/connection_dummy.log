@@ -1,0 +1,63 @@
+2020-07-29 23:56:49,220 - connect_host[line:86] - INFO: Host connected(COM10).
+2020-07-29 23:56:49,231 - start_serial_worker[line:99] - INFO: Start to handle serial data ...
+2020-07-29 23:57:02,736 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_GET_BAT_STATUS (0x10)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:02,740 - get_packet[line:56] - INFO: #0 Host2Device_Packet: 02100001000158cd5f5603
+2020-07-29 23:57:02,749 - send_msg[line:129] - INFO: sent MSG (b'Z') of command 'PRT_SENT_BAT_STATUS (0x11)'. 
+2020-07-29 23:57:02,769 - send_data[line:109] - INFO: #0 Device2Host_Packet: 02110001005aac31e01503
+2020-07-29 23:57:02,772 - send_data[line:109] - INFO: #1 Device2Host_Packet: 02100001000046895e9e03
+2020-07-29 23:57:07,597 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_SET_CRC_KEY (0x18)', len=4, payload='bytearray(b'\x1a\xc9\xcb\x82') (0x1ac9cb82))'. 
+2020-07-29 23:57:07,608 - get_packet[line:56] - INFO: #1 Host2Device_Packet: 02180004001ac9cb82b281a66703
+2020-07-29 23:57:07,627 - set_crc32_key[line:134] - INFO: CRC key set to 0x82cbc91a
+2020-07-29 23:57:07,631 - send_data[line:109] - INFO: #2 Device2Host_Packet: 02180001000046895e9e03
+2020-07-29 23:57:07,734 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_GET_SN (0xa)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:07,750 - get_packet[line:56] - INFO: #2 Host2Device_Packet: 020a00010001638bb91403
+2020-07-29 23:57:07,774 - send_msg[line:129] - INFO: sent MSG (b'P2B02004087288') of command 'PRT_SENT_SN (0xb)'. 
+2020-07-29 23:57:07,776 - send_data[line:109] - INFO: #3 Device2Host_Packet: 020b000e005032423032303034303837323838f5a3b7d503
+2020-07-29 23:57:07,779 - send_data[line:109] - INFO: #4 Device2Host_Packet: 020a0001000046895e9e03
+2020-07-29 23:57:07,784 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_GET_DEV_NAME (0x30)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:07,793 - get_packet[line:56] - INFO: #3 Host2Device_Packet: 023000010001638bb91403
+2020-07-29 23:57:07,797 - send_msg[line:129] - INFO: sent MSG (b'P2') of command 'PRT_SENT_DEV_NAME (0x31)'. 
+2020-07-29 23:57:07,799 - send_data[line:109] - INFO: #5 Device2Host_Packet: 0231000200503275594f3f03
+2020-07-29 23:57:07,808 - send_data[line:109] - INFO: #6 Device2Host_Packet: 02300001000046895e9e03
+2020-07-29 23:57:07,811 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_GET_POWER_DOWN_TIME (0x1f)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:07,813 - get_packet[line:56] - INFO: #4 Host2Device_Packet: 021f00010001638bb91403
+2020-07-29 23:57:07,814 - send_msg[line:129] - INFO: sent MSG (b'\x10\x0e') of command 'PRT_SENT_POWER_DOWN_TIME (0x20)'. 
+2020-07-29 23:57:07,816 - send_data[line:109] - INFO: #7 Device2Host_Packet: 0220000200100ef76a59e003
+2020-07-29 23:57:07,826 - send_data[line:109] - INFO: #8 Device2Host_Packet: 021f0001000046895e9e03
+2020-07-29 23:57:07,828 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_GET_BAT_STATUS (0x10)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:07,829 - get_packet[line:56] - INFO: #5 Host2Device_Packet: 021000010001638bb91403
+2020-07-29 23:57:07,830 - send_msg[line:129] - INFO: sent MSG (b'Z') of command 'PRT_SENT_BAT_STATUS (0x11)'. 
+2020-07-29 23:57:07,831 - send_data[line:109] - INFO: #9 Device2Host_Packet: 02110001005aac31e01503
+2020-07-29 23:57:07,834 - send_data[line:109] - INFO: #10 Device2Host_Packet: 02100001000046895e9e03
+2020-07-29 23:57:07,843 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_GET_COUNTRY_NAME (0x2d)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:07,845 - get_packet[line:56] - INFO: #6 Host2Device_Packet: 022d00010001638bb91403
+2020-07-29 23:57:07,846 - send_msg[line:129] - INFO: sent MSG (b'CN') of command 'PRT_SENT_COUNTRY_NAME (0x2e)'. 
+2020-07-29 23:57:07,848 - send_data[line:109] - INFO: #11 Device2Host_Packet: 022e000200434ef025130703
+2020-07-29 23:57:07,851 - send_data[line:109] - INFO: #12 Device2Host_Packet: 022d0001000046895e9e03
+2020-07-29 23:57:07,860 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_CMD_42 (0x42)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:07,861 - get_packet[line:56] - INFO: #7 Host2Device_Packet: 024200010001638bb91403
+2020-07-29 23:57:07,862 - send_msg[line:129] - INFO: sent MSG (b'BK3432') of command 'PRT_CMD_43 (0x43)'. 
+2020-07-29 23:57:07,863 - send_data[line:109] - INFO: #13 Device2Host_Packet: 0243000600424b33343332e7ebd39803
+2020-07-29 23:57:07,864 - send_data[line:109] - INFO: #14 Device2Host_Packet: 02420001000046895e9e03
+2020-07-29 23:57:07,866 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_CMD_7F (0x7f)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:07,872 - get_packet[line:56] - INFO: #8 Host2Device_Packet: 027f00010001638bb91403
+2020-07-29 23:57:07,874 - send_msg[line:129] - INFO: sent MSG (b'v3.38.19\x00\x00\x00\x00') of command 'PRT_CMD_80 (0x80)'. 
+2020-07-29 23:57:07,874 - send_data[line:109] - INFO: #15 Device2Host_Packet: 0280000c0076332e33382e31390000000027be9a5903
+2020-07-29 23:57:07,875 - send_data[line:109] - INFO: #16 Device2Host_Packet: 027f0001000046895e9e03
+2020-07-29 23:57:07,877 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_CMD_81 (0x81)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:07,878 - get_packet[line:56] - INFO: #9 Host2Device_Packet: 028100010001638bb91403
+2020-07-29 23:57:07,879 - send_msg[line:129] - INFO: sent MSG (b'HME230_P2\x00\x00\x00\x00\x00\x00\x00') of command 'PRT_CMD_82 (0x82)'. 
+2020-07-29 23:57:07,880 - send_data[line:109] - INFO: #17 Device2Host_Packet: 0282001000484d453233305f5032000000000000006e10aa1b03
+2020-07-29 23:57:07,881 - send_data[line:109] - INFO: #18 Device2Host_Packet: 02810001000046895e9e03
+2020-07-29 23:57:07,883 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_GET_VERSION (0x4)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:57:07,888 - get_packet[line:56] - INFO: #10 Host2Device_Packet: 020400010001638bb91403
+2020-07-29 23:57:07,889 - send_msg[line:129] - INFO: sent MSG (b'\x08\x01\x01') of command 'PRT_SENT_VERSION (0x5)'. 
+2020-07-29 23:57:07,890 - send_data[line:109] - INFO: #19 Device2Host_Packet: 0205000300080101c90f911303
+2020-07-29 23:57:07,892 - send_data[line:109] - INFO: #20 Device2Host_Packet: 02040001000046895e9e03
+2020-07-29 23:57:07,894 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_CMD_39 (0x39)', len=1, payload='bytearray(b'\n') (0x0a))'. 
+2020-07-29 23:57:07,895 - get_packet[line:56] - INFO: #11 Host2Device_Packet: 02390001000aeb526b8303
+2020-07-29 23:57:07,896 - send_data[line:109] - INFO: #21 Device2Host_Packet: 02390001000046895e9e03
+2020-07-29 23:57:08,041 - log_packet[line:86] - INFO: [DUMMY]: command 'PRT_SET_HEAT_DENSITY (0x19)', len=1, payload='bytearray(b'K') (0x4b))'. 
+2020-07-29 23:57:08,043 - get_packet[line:56] - INFO: #12 Host2Device_Packet: 02190001004bed23b08203
+2020-07-29 23:57:08,046 - handle_set_heat_density[line:187] - INFO: Heat density set to 75%
+2020-07-29 23:57:08,049 - send_data[line:109] - INFO: #22 Device2Host_Packet: 02190001000046895e9e03

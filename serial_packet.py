@@ -1,6 +1,7 @@
 from logger import Logger
 from const import Const
-
+from prt_cmd import BtCommandByte
+from prt_packet import PRTPacket
 
 # state machine for serial data parser
 class FSM:
@@ -31,6 +32,7 @@ class SerialDataPacket:
         self.tag = tag
         self.state = None
         self.pkt_buf = bytearray()
+        self.packet = None
         self.enter_state_init()
 
 
@@ -63,6 +65,26 @@ class SerialDataPacket:
         self.logging.debug(
             "[{}]: packet CRC32 = ({})".format(self.tag, hex(self.crc32)))
 
+    def unpack_pkt_buf(self, pkt_buf):
+        self.packet = PRTPacket()
+        try:
+            self.packet.unpack_data(pkt_buf, check_crc=False)
+        except ValueError:
+            self.logging.warn("ignored malformed packet.")
+
+    def log_packet(self, packet):
+        if packet.cmd == BtCommandByte.PRT_PRINT_DATA:
+            self.logging.info(
+                "[{}]: command '{} ({})', len={} ".format(self.tag,
+                    BtCommandByte.findCommand(packet.cmd), hex(packet.cmd),
+                    packet.len))
+        else:
+            self.logging.info(
+                "[{}]: command '{} ({})', len={}, payload='{} (0x{}))'. ".format(
+                    self.tag,
+                    BtCommandByte.findCommand(packet.cmd), hex(packet.cmd),
+                    packet.len, packet.payload, packet.payload.hex()))
+
     def parse_data(self, data, callback=None):
         self.logging.debug(
             "[{}]: parsing data ({})".format(self.tag, data.hex()))
@@ -77,6 +99,10 @@ class SerialDataPacket:
                 self.pkt_buf.extend(byte)
                 if self.state == FSM.GOT_CRC:
                     self.enter_state_init()  # one packet received
+
+                    self.unpack_pkt_buf(self.pkt_buf)
+                    self.log_packet(self.packet)
+
                     if callback:
                         callback(self.pkt_buf)
             else:

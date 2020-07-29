@@ -92,14 +92,19 @@ class Bridge:
         return True
 
     def connect_device(self):
-        if not self.scanservices():
-            self.logging.error('Not found valid service.')
+        try:
+            if not self.scanservices():
+                self.logging.error('Not found valid service.')
+                return False
+            self.logging.info("Service found. Connecting to \"%s\" on %s..." %
+                        (self.service["name"], self.service["host"]))
+            self.sock = BluetoothSocket(RFCOMM)
+            self.sock.connect((self.service["host"], self.service["port"]))
+            self.sock.settimeout(60)
+        except OSError as e:
+            self.logging.error(e)
             return False
-        self.logging.info("Service found. Connecting to \"%s\" on %s..." %
-                     (self.service["name"], self.service["host"]))
-        self.sock = BluetoothSocket(RFCOMM)
-        self.sock.connect((self.service["host"], self.service["port"]))
-        self.sock.settimeout(60)
+
         self.logging.info("Device connected.")
 
         return True

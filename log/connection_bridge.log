@@ -1,0 +1,40 @@
+2020-07-29 23:45:23,613 - connect_host[line:72] - INFO: Host connected.
+2020-07-29 23:45:23,616 - scanservices[line:80] - INFO: Searching for services...
+2020-07-29 23:45:25,308 - scanservices[line:90] - INFO: Found a valid service on target device.
+2020-07-29 23:45:25,320 - connect_device[line:100] - INFO: Service found. Connecting to "b'Port\x00'" on fc:58:fa:1e:26:63...
+2020-07-29 23:45:25,656 - connect_device[line:108] - INFO: Device connected.
+2020-07-29 23:45:25,672 - redirect_Serial2Bt_thread[line:125] - INFO: Start to redirect host data to device ...
+2020-07-29 23:45:25,684 - redirect_Bt2Serial[line:128] - INFO: Start to redirect device data to host ...
+2020-07-29 23:46:05,211 - get_packet[line:46] - INFO: #0 Host2Device_Packet: 0218000400339e15d64f24d2a003
+2020-07-29 23:46:05,287 - get_packet[line:155] - INFO: #0 Device2Host_Packet: 021800010000cefd582103
+2020-07-29 23:46:05,394 - get_packet[line:46] - INFO: #1 Host2Device_Packet: 020a0001000158cd5f5603
+2020-07-29 23:46:05,411 - get_packet[line:46] - INFO: #2 Host2Device_Packet: 02300001000158cd5f5603
+2020-07-29 23:46:05,423 - get_packet[line:46] - INFO: #3 Host2Device_Packet: 021f0001000158cd5f5603
+2020-07-29 23:46:05,426 - get_packet[line:155] - INFO: #1 Device2Host_Packet: 020b000e005032423032303034303837323930804c1a8803
+2020-07-29 23:46:05,436 - get_packet[line:46] - INFO: #4 Host2Device_Packet: 02100001000158cd5f5603
+2020-07-29 23:46:05,441 - get_packet[line:155] - INFO: #2 Device2Host_Packet: 020a00010000cefd582103
+2020-07-29 23:46:05,449 - get_packet[line:46] - INFO: #5 Host2Device_Packet: 022d0001000158cd5f5603
+2020-07-29 23:46:05,451 - get_packet[line:46] - INFO: #6 Host2Device_Packet: 02420001000158cd5f5603
+2020-07-29 23:46:05,454 - get_packet[line:155] - INFO: #3 Device2Host_Packet: 02310002005032135493dc03
+2020-07-29 23:46:05,463 - get_packet[line:155] - INFO: #4 Device2Host_Packet: 023000010000cefd582103
+2020-07-29 23:46:05,465 - get_packet[line:155] - INFO: #5 Device2Host_Packet: 022000020008076c4742f803
+2020-07-29 23:46:05,467 - get_packet[line:155] - INFO: #6 Device2Host_Packet: 021f00010000cefd582103
+2020-07-29 23:46:05,469 - get_packet[line:155] - INFO: #7 Device2Host_Packet: 021100010049fa04582e03
+2020-07-29 23:46:05,472 - get_packet[line:155] - INFO: #8 Device2Host_Packet: 021000010000cefd582103
+2020-07-29 23:46:05,474 - get_packet[line:46] - INFO: #7 Host2Device_Packet: 027f0001000158cd5f5603
+2020-07-29 23:46:05,478 - get_packet[line:155] - INFO: #9 Device2Host_Packet: 022e000200434e9628cfe403
+2020-07-29 23:46:05,479 - get_packet[line:46] - INFO: #8 Host2Device_Packet: 02810001000158cd5f5603
+2020-07-29 23:46:05,480 - get_packet[line:155] - INFO: #10 Device2Host_Packet: 022d00010000cefd582103
+2020-07-29 23:46:05,481 - get_packet[line:46] - INFO: #9 Host2Device_Packet: 02040001000158cd5f5603
+2020-07-29 23:46:05,483 - get_packet[line:155] - INFO: #11 Device2Host_Packet: 0243000600424b33343332bae9c89a03
+2020-07-29 23:46:05,484 - get_packet[line:155] - INFO: #12 Device2Host_Packet: 024200010000cefd582103
+2020-07-29 23:46:05,502 - get_packet[line:155] - INFO: #13 Device2Host_Packet: 0280000c0076332e33382e3139000000009ef2d61703
+2020-07-29 23:46:05,504 - get_packet[line:155] - INFO: #14 Device2Host_Packet: 027f00010000cefd582103
+2020-07-29 23:46:05,510 - get_packet[line:155] - INFO: #15 Device2Host_Packet: 0282001000484d453233305f5032000000000000004409f8cf03
+2020-07-29 23:46:05,527 - get_packet[line:155] - INFO: #16 Device2Host_Packet: 028100010000cefd582103
+2020-07-29 23:46:05,528 - get_packet[line:155] - INFO: #17 Device2Host_Packet: 02050003000701019450ffbc03
+2020-07-29 23:46:05,529 - get_packet[line:155] - INFO: #18 Device2Host_Packet: 020400010000cefd582103
+2020-07-29 23:46:05,532 - get_packet[line:46] - INFO: #10 Host2Device_Packet: 02390001000ad0148dc103
+2020-07-29 23:46:05,550 - get_packet[line:155] - INFO: #19 Device2Host_Packet: 023900010000cefd582103
+2020-07-29 23:46:05,666 - get_packet[line:46] - INFO: #11 Host2Device_Packet: 02190001004bd66556c003
+2020-07-29 23:46:05,754 - get_packet[line:155] - INFO: #20 Device2Host_Packet: 021900010000cefd582103

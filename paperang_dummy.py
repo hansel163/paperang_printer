@@ -9,6 +9,7 @@ from logger import Logger as Logger
 from const import Const
 from serial_packet import SerialDataPacket
 from prt_packet import PRTPacket
+from image_lib import ImageHandler
 
 # pyserial tools
 # python -m serial.tools.list_ports
@@ -72,6 +73,9 @@ class DummyPrinter:
         self.power_down_time = PRT_PWD_DOWN_TIME
         self.heat_density = PRT_HEAT_DENSITY
 
+        # other objects
+        self.img_handler = ImageHandler()
+
     def connect_host(self):
         try:
             self.serial.open()
@@ -110,7 +114,7 @@ class DummyPrinter:
         packet.cmd = cmd
         packet.payload = struct.pack('<B', ack)
         data = packet.pack_data()
-        self.logging.info(
+        self.logging.debug(
             "sent ACK ({}) to command '{} ({})'. ".format(ack,
             BtCommandByte.findCommand(packet.cmd), hex(packet.cmd)))
         self.send_data(data)
@@ -203,16 +207,8 @@ class DummyPrinter:
             BtCommandByte.PRT_SET_HEAT_DENSITY: self.handle_set_heat_density,
             BtCommandByte.PRT_GET_HEAT_DENSITY: self.handle_get_heat_density
         }
-        if packet.cmd != BtCommandByte.PRT_PRINT_DATA:
-            self.logging.info(
-                "Received command '{} ({})', len={}, payload='{} (0x{}))'. ".format(
-                    BtCommandByte.findCommand(packet.cmd), hex(packet.cmd),
-                    packet.len, packet.payload, packet.payload.hex()))
-        else:
-            self.logging.info(
-                "Received command '{} ({})', len={} ".format(
-                    BtCommandByte.findCommand(packet.cmd), hex(packet.cmd),
-                    packet.len))
+        if packet.cmd == BtCommandByte.PRT_PRINT_DATA:
+            self.img_handler.process_image_data(packet)
 
         handler = cmd_handlers.get(packet.cmd, self.handle_other_cmds)
         if handler:

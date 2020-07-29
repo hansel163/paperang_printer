@@ -1,0 +1,73 @@
+2020-07-29 23:58:53,566 - connect_host[line:72] - INFO: Host connected.
+2020-07-29 23:58:53,567 - scanservices[line:80] - INFO: Searching for services...
+2020-07-29 23:58:55,085 - scanservices[line:90] - INFO: Found a valid service on target device.
+2020-07-29 23:58:55,092 - connect_device[line:100] - INFO: Service found. Connecting to "b'Port\x00'" on fc:58:fa:1e:26:63...
+2020-07-29 23:58:55,333 - connect_device[line:108] - INFO: Device connected.
+2020-07-29 23:58:55,356 - redirect_Serial2Bt_thread[line:125] - INFO: Start to redirect host data to device ...
+2020-07-29 23:58:55,367 - redirect_Bt2Serial[line:128] - INFO: Start to redirect device data to host ...
+2020-07-29 23:59:01,928 - log_packet[line:86] - INFO: [HOST]: command 'PRT_SET_CRC_KEY (0x18)', len=4, payload='bytearray(b'O\x16\xac*') (0x4f16ac2a))'. 
+2020-07-29 23:59:01,941 - get_packet[line:46] - INFO: #0 Host2Device_Packet: 02180004004f16ac2a95da11ef03
+2020-07-29 23:59:02,014 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_SET_CRC_KEY (0x18)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,029 - get_packet[line:155] - INFO: #0 Device2Host_Packet: 0218000100005179177803
+2020-07-29 23:59:02,129 - log_packet[line:86] - INFO: [HOST]: command 'PRT_GET_SN (0xa)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:59:02,142 - get_packet[line:46] - INFO: #1 Host2Device_Packet: 020a00010001c749100f03
+2020-07-29 23:59:02,152 - log_packet[line:86] - INFO: [HOST]: command 'PRT_GET_DEV_NAME (0x30)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:59:02,158 - get_packet[line:46] - INFO: #2 Host2Device_Packet: 023000010001c749100f03
+2020-07-29 23:59:02,165 - log_packet[line:86] - INFO: [HOST]: command 'PRT_GET_POWER_DOWN_TIME (0x1f)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:59:02,175 - get_packet[line:46] - INFO: #3 Host2Device_Packet: 021f00010001c749100f03
+2020-07-29 23:59:02,178 - log_packet[line:86] - INFO: [HOST]: command 'PRT_GET_BAT_STATUS (0x10)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:59:02,179 - get_packet[line:46] - INFO: #4 Host2Device_Packet: 021000010001c749100f03
+2020-07-29 23:59:02,183 - log_packet[line:86] - INFO: [HOST]: command 'PRT_GET_COUNTRY_NAME (0x2d)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:59:02,188 - get_packet[line:46] - INFO: #5 Host2Device_Packet: 022d00010001c749100f03
+2020-07-29 23:59:02,194 - log_packet[line:86] - INFO: [HOST]: command 'PRT_CMD_42 (0x42)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:59:02,195 - get_packet[line:46] - INFO: #6 Host2Device_Packet: 024200010001c749100f03
+2020-07-29 23:59:02,206 - log_packet[line:86] - INFO: [HOST]: command 'PRT_CMD_7F (0x7f)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:59:02,208 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_SENT_SN (0xb)', len=14, payload='bytearray(b'P2B02004087290') (0x5032423032303034303837323930))'. 
+2020-07-29 23:59:02,208 - get_packet[line:46] - INFO: #7 Host2Device_Packet: 027f00010001c749100f03
+2020-07-29 23:59:02,209 - get_packet[line:155] - INFO: #1 Device2Host_Packet: 020b000e0050324230323030343038373239304c0e77d803
+2020-07-29 23:59:02,212 - log_packet[line:86] - INFO: [HOST]: command 'PRT_CMD_81 (0x81)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:59:02,213 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_GET_SN (0xa)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,215 - get_packet[line:46] - INFO: #8 Host2Device_Packet: 028100010001c749100f03
+2020-07-29 23:59:02,222 - get_packet[line:155] - INFO: #2 Device2Host_Packet: 020a000100005179177803
+2020-07-29 23:59:02,225 - log_packet[line:86] - INFO: [HOST]: command 'PRT_GET_VERSION (0x4)', len=1, payload='bytearray(b'\x01') (0x01))'. 
+2020-07-29 23:59:02,226 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_SENT_DEV_NAME (0x31)', len=2, payload='bytearray(b'P2') (0x5032))'. 
+2020-07-29 23:59:02,227 - get_packet[line:46] - INFO: #9 Host2Device_Packet: 020400010001c749100f03
+2020-07-29 23:59:02,228 - get_packet[line:155] - INFO: #3 Device2Host_Packet: 0231000200503242957abc03
+2020-07-29 23:59:02,232 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_GET_DEV_NAME (0x30)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,238 - get_packet[line:155] - INFO: #4 Device2Host_Packet: 0230000100005179177803
+2020-07-29 23:59:02,240 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_SENT_POWER_DOWN_TIME (0x20)', len=2, payload='bytearray(b'\x08\x07') (0x0807))'. 
+2020-07-29 23:59:02,240 - get_packet[line:155] - INFO: #5 Device2Host_Packet: 022000020008073d86ab9803
+2020-07-29 23:59:02,242 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_GET_POWER_DOWN_TIME (0x1f)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,243 - get_packet[line:155] - INFO: #6 Device2Host_Packet: 021f000100005179177803
+2020-07-29 23:59:02,244 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_SENT_BAT_STATUS (0x11)', len=1, payload='bytearray(b'G') (0x47))'. 
+2020-07-29 23:59:02,245 - get_packet[line:155] - INFO: #7 Device2Host_Packet: 02110001004762adaf9003
+2020-07-29 23:59:02,246 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_GET_BAT_STATUS (0x10)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,248 - get_packet[line:155] - INFO: #8 Device2Host_Packet: 0210000100005179177803
+2020-07-29 23:59:02,255 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_SENT_COUNTRY_NAME (0x2e)', len=2, payload='bytearray(b'CN') (0x434e))'. 
+2020-07-29 23:59:02,255 - get_packet[line:155] - INFO: #9 Device2Host_Packet: 022e000200434ec7e9268403
+2020-07-29 23:59:02,256 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_GET_COUNTRY_NAME (0x2d)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,257 - get_packet[line:155] - INFO: #10 Device2Host_Packet: 022d000100005179177803
+2020-07-29 23:59:02,259 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_CMD_43 (0x43)', len=6, payload='bytearray(b'BK3432') (0x424b33343332))'. 
+2020-07-29 23:59:02,260 - get_packet[line:155] - INFO: #11 Device2Host_Packet: 0243000600424b33343332f7541abb03
+2020-07-29 23:59:02,261 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_CMD_42 (0x42)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,262 - get_packet[line:155] - INFO: #12 Device2Host_Packet: 0242000100005179177803
+2020-07-29 23:59:02,265 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_CMD_80 (0x80)', len=12, payload='bytearray(b'v3.38.19\x00\x00\x00\x00') (0x76332e33382e313900000000))'. 
+2020-07-29 23:59:02,269 - get_packet[line:155] - INFO: #13 Device2Host_Packet: 0280000c0076332e33382e3139000000004c7a95f903
+2020-07-29 23:59:02,271 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_CMD_7F (0x7f)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,272 - get_packet[line:155] - INFO: #14 Device2Host_Packet: 027f000100005179177803
+2020-07-29 23:59:02,273 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_CMD_82 (0x82)', len=16, payload='bytearray(b'HME230_P2\x00\x00\x00\x00\x00\x00\x00') (0x484d453233305f503200000000000000))'. 
+2020-07-29 23:59:02,274 - get_packet[line:155] - INFO: #15 Device2Host_Packet: 0282001000484d453233305f503200000000000000d7e1653003
+2020-07-29 23:59:02,276 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_CMD_81 (0x81)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,277 - get_packet[line:155] - INFO: #16 Device2Host_Packet: 0281000100005179177803
+2020-07-29 23:59:02,278 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_SENT_VERSION (0x5)', len=3, payload='bytearray(b'\x07\x01\x01') (0x070101))'. 
+2020-07-29 23:59:02,279 - get_packet[line:155] - INFO: #17 Device2Host_Packet: 020500030007010137d8f3a003
+2020-07-29 23:59:02,281 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_GET_VERSION (0x4)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,286 - get_packet[line:155] - INFO: #18 Device2Host_Packet: 0204000100005179177803
+2020-07-29 23:59:02,320 - log_packet[line:86] - INFO: [HOST]: command 'PRT_CMD_39 (0x39)', len=1, payload='bytearray(b'\n') (0x0a))'. 
+2020-07-29 23:59:02,321 - get_packet[line:46] - INFO: #10 Host2Device_Packet: 02390001000a4f90c29803
+2020-07-29 23:59:02,353 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_CMD_39 (0x39)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,354 - get_packet[line:155] - INFO: #19 Device2Host_Packet: 0239000100005179177803
+2020-07-29 23:59:02,463 - log_packet[line:86] - INFO: [HOST]: command 'PRT_SET_HEAT_DENSITY (0x19)', len=1, payload='bytearray(b'K') (0x4b))'. 
+2020-07-29 23:59:02,468 - get_packet[line:46] - INFO: #11 Host2Device_Packet: 02190001004b49e1199903
+2020-07-29 23:59:02,485 - log_packet[line:86] - INFO: [DEVICE]: command 'PRT_SET_HEAT_DENSITY (0x19)', len=1, payload='bytearray(b'\x00') (0x00))'. 
+2020-07-29 23:59:02,499 - get_packet[line:155] - INFO: #20 Device2Host_Packet: 0219000100005179177803
