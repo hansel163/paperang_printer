@@ -209,6 +209,8 @@ class DummyPrinter:
         }
         if packet.cmd == BtCommandByte.PRT_PRINT_DATA:
             self.img_handler.process_image_data(packet)
+        elif packet.cmd == BtCommandByte.PRT_FEED_LINE:
+            self.img_handler.end_image_data()
 
         handler = cmd_handlers.get(packet.cmd, self.handle_other_cmds)
         if handler:
